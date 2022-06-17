@@ -48,7 +48,7 @@
             sessionStorage.setItem("current-level", 1);
             document.querySelector(".levels__middle p").textContent = sessionStorage.getItem("current-level");
         } else document.querySelector(".levels__middle p").textContent = sessionStorage.getItem("current-level");
-        if (+sessionStorage.getItem("money") >= 100) sessionStorage.setItem("current-bet", 100); else sessionStorage.setItem("current-bet", 0);
+        if (+sessionStorage.getItem("money") >= 50) sessionStorage.setItem("current-bet", 50); else sessionStorage.setItem("current-bet", 0);
         document.querySelector(".levels__middle-bet p").textContent = sessionStorage.getItem("current-bet");
     }
     const preloader = document.querySelector(".preloader");
@@ -1259,7 +1259,7 @@
             check_damage_enemys();
             config_game.goal = 1;
         } else if (2 == config_game.goal && config_game.current_life_enemy_1 > 0 && config_game.current_life_enemy_2 <= 0) {
-            goal_enemy_2();
+            goal_enemy_1();
             check_damage_enemys();
             config_game.goal = 1;
         }
@@ -1384,12 +1384,12 @@
             sessionStorage.setItem("current-level", current_level + 1);
             document.querySelector(".levels__middle p").textContent = sessionStorage.getItem("current-level");
         }
-        if (targetElement.closest(".levels__arrow-bet_left")) if (current_bet > 100) {
-            sessionStorage.setItem("current-bet", current_bet - 100);
+        if (targetElement.closest(".levels__arrow-bet_left")) if (current_bet > 50) {
+            sessionStorage.setItem("current-bet", current_bet - 50);
             document.querySelector(".levels__middle-bet p").textContent = sessionStorage.getItem("current-bet");
         }
         if (targetElement.closest(".levels__arrow-bet_right")) if (bank > current_bet) {
-            sessionStorage.setItem("current-bet", current_bet + 100);
+            sessionStorage.setItem("current-bet", current_bet + 50);
             document.querySelector(".levels__middle-bet p").textContent = sessionStorage.getItem("current-bet");
         }
         if (targetElement.closest(".team__rules-button")) {
